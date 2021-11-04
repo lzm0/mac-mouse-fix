@@ -47,7 +47,7 @@
     @abstract The type of event represented by an IOHIDEventRef.
     @discussion It is possible that a single IOHIDEventRef can conform to
     multiple event types through the use of sub events.  For futher information
-    as to how to determinte the type of event please reference IOHIDEventGetType 
+    as to how to determine the type of event please reference IOHIDEventGetType 
     and IOHIDEventConformsTo.
     @constant kIOHIDEventTypeNULL
     @constant kIOHIDEventTypeVendorDefined
@@ -654,11 +654,11 @@ typedef uint32_t IOHIDDigitizerTransducerType;
     @typedef IOHIDDigitizerEventMask
     @abstract Event mask detailing the events being dispatched by a digitizer.
     @discussion It is possible for digitizer events to contain child digitizer events, effectively, behaving as collections.  
-    In the collection case, the child event mask field referrence by kIOHIDEventFieldDigitizerChildEventMask will detail the 
+    In the collection case, the child event mask field reference by kIOHIDEventFieldDigitizerChildEventMask will detail the 
     cumulative event state of the child digitizer events.
     <br>
     <b>Please Note:</b>
-    If you append a child digitizer event to a parent digitizer event, appropriate state will be transfered on to the parent.
+    If you append a child digitizer event to a parent digitizer event, appropriate state will be transferred on to the parent.
     @constant kIOHIDDigitizerEventRange Issued when the range state has changed.
     @constant kIOHIDDigitizerEventTouch Issued when the touch state has changed.
     @constant kIOHIDDigitizerEventPosition Issued when the position has changed.
@@ -728,7 +728,7 @@ typedef uint16_t IOHIDEventPhaseBits;
 
 /*!
  @typedef IOHIDSymbolicHotKey
- @abstract Enumerted values for sending symbolic hot key events.
+ @abstract Enumerated values for sending symbolic hot key events.
  @constant kIOHIDSymbolicHotKeyDictionaryApp    This will get translated into a kCGSDictionaryAppHotKey by CG.
  @constant kIOHIDSymbolicHotKeyIronwoodApp      This will get translated into a kCGSIronwoodHotKey by CG.
  @constant kIOHIDSymbolicHotKeyDictationApp     This will get translated into a kCGSDictationHotKey by CG.

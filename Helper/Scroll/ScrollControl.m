@@ -141,7 +141,7 @@ static int _scrollDirection;
 ///
 /// Use this when internal parameters change while processing an event.
 /// This will essentially restart the evaluation of the event while respecting the new internal parameters.
-/// You probably wanna return after calliing this.
+/// You probably wanna return after calling this.
 + (void)rerouteScrollEventToTop:(CGEventRef)event {
     eventTapCallback(nil, 0, event, nil);
 }
@@ -213,14 +213,14 @@ static CGEventRef eventTapCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     // Do heavy processing of event on a different thread using `dispatch_async`, so we can return faster
     // Returning fast should prevent the system from disabling this eventTap entirely when under load. This doesn't happen in MOS for some reason, maybe there's a better solution than multithreading.
     
-    // \discusson With multithreading enabled, scrolling sometimes - seemingly at random - stops working entirely. So the tap still works but sending events doesn't.
-    // \discusson - Switching to an app that doesn't have smothscroll enabled seems to fix it. -> Somethings in my code must be breaking. -> The solution was executing displayLinkActivate() on the main thread, so idk why this happened.
-    // \discusson Sometimes the scroll direction is wrong for one tick, seemingly at random. I don't think this happened before the multithreading stuff. Also, I changed other things as well around the time it started happening so not sure if it really has to do with multithreading.
+    // \discussion With multithreading enabled, scrolling sometimes - seemingly at random - stops working entirely. So the tap still works but sending events doesn't.
+    // \discussion - Switching to an app that doesn't have smoothscroll enabled seems to fix it. -> Something in my code must be breaking. -> The solution was executing displayLinkActivate() on the main thread, so idk why this happened.
+    // \discussion Sometimes the scroll direction is wrong for one tick, seemingly at random. I don't think this happened before the multithreading stuff. Also, I changed other things as well around the time it started happening so not sure if it really has to do with multithreading.
     dispatch_async(_scrollQueue, ^{
 
         // Set application overrides
         
-        [ScrollUtility updateConsecutiveScrollTickAndSwipeCountersWithTickOccuringNow];
+        [ScrollUtility updateConsecutiveScrollTickAndSwipeCountersWithTickOccurringNow];
         
         if (ScrollUtility.consecutiveScrollTickCounter == 0) { // Only do this on the first of each series of consecutive scroll ticks
             [ScrollUtility updateMouseDidMove];

@@ -99,7 +99,7 @@ CG_EXTERN CGError CGSHideCursor(CGSConnectionID cid);
 /// Hides the cursor until the cursor is moved.
 CG_EXTERN CGError CGSObscureCursor(CGSConnectionID cid);
 
-/// Acts as if a mouse moved event occured and that reveals the cursor if it was hidden.
+/// Acts as if a mouse moved event occurred and that reveals the cursor if it was hidden.
 CG_EXTERN CGError CGSRevealCursor(CGSConnectionID cid);
 
 /// Shows or hides the spinning beachball of death.
@@ -125,7 +125,7 @@ CG_EXTERN CGError CGSGetCurrentCursorLocation(CGSConnectionID cid, CGPoint *outP
 /// Gets the name (ideally in reverse DNS form) of a system cursor.
 CG_EXTERN char *CGSCursorNameForSystemCursor(CGSCursorID cursor);
 
-/// Gets the scale of the current currsor.
+/// Gets the scale of the current cursor.
 CG_EXTERN CGError CGSGetCursorScale(CGSConnectionID cid, CGFloat *outScale);
 
 /// Sets the scale of the current cursor.

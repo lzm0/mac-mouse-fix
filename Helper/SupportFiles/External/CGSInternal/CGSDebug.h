@@ -39,11 +39,11 @@ typedef enum {
 	/// Clears all flags.
 	kCGSDebugOptionNone							= 0,
 
-	/// All screen updates are flashed in yellow. Regions under a DisableUpdate are flashed in orange. Regions that are hardware accellerated are painted green.
+	/// All screen updates are flashed in yellow. Regions under a DisableUpdate are flashed in orange. Regions that are hardware accelerated are painted green.
 	kCGSDebugOptionFlashScreenUpdates			= 0x4,
 
-	/// Colors windows green if they are accellerated, otherwise red. Doesn't cause things to refresh properly - leaves excess rects cluttering the screen.
-	kCGSDebugOptionColorByAccelleration			= 0x20,
+	/// Colors windows green if they are accelerated, otherwise red. Doesn't cause things to refresh properly - leaves excess rects cluttering the screen.
+	kCGSDebugOptionColorByacceleration			= 0x20,
 
 	/// Disables shadows on all windows.
 	kCGSDebugOptionNoShadows					= 0x4000,
@@ -84,7 +84,7 @@ typedef enum {
 	/// Leopard: Dumps information about caches to `/tmp/WindowServer.scinfo.out`.
 	kCGSDebugOptionDumpCacheInformationToFile	= 0x80000015,
 
-	/// Leopard: Purges some sort of cache - most likely the same caches dummped with `kCGSDebugOptionDumpCacheInformationToFile`.
+	/// Leopard: Purges some sort of cache - most likely the same caches dumped with `kCGSDebugOptionDumpCacheInformationToFile`.
 	kCGSDebugOptionPurgeCaches					= 0x80000016,
 
 	/// Leopard: Dumps a list of windows to `/tmp/WindowServer.winfo.plist`. This is what Quartz Debug on 10.5 uses to get the window list.

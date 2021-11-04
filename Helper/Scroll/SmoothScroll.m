@@ -104,7 +104,7 @@ static BOOL _hasStarted;
     
     _hasStarted = YES;
     [SmoothScroll resetDynamicGlobals];
-    CGDisplayRemoveReconfigurationCallback(Handle_displayReconfiguration, NULL); // don't know if necesssary
+    CGDisplayRemoveReconfigurationCallback(Handle_displayReconfiguration, NULL); // don't know if necessary
     CGDisplayRegisterReconfigurationCallback(Handle_displayReconfiguration, NULL);
 }
 + (void)stop {
@@ -190,7 +190,7 @@ static BOOL _hasStarted;
     
     if (ScrollUtility.consecutiveScrollTickCounter == 0) {
         if (ScrollUtility.mouseDidMove) {
-            // Set diplaylink to the display that is actally being scrolled - not sure if this is necessary, because having the displaylink at 30fps on a 30fps display looks just as horrible as having the display link on 60fps, if not worse
+            // Set displaylink to the display that is actually being scrolled - not sure if this is necessary, because having the displaylink at 30fps on a 30fps display looks just as horrible as having the display link on 60fps, if not worse
             @try {
                 setDisplayLinkToDisplayUnderMousePointer(event);
             } @catch (NSException *e) {
@@ -378,7 +378,7 @@ static void setDisplayLinkToDisplayUnderMousePointer(CGEventRef event) {
         NSLog(@"more than one display for current mouse position");
         
     } else if (matchingDisplayCount == 0) {
-        NSException *e = [NSException exceptionWithName:NSInternalInconsistencyException reason:@"there are 0 diplays under the mouse pointer" userInfo:NULL];
+        NSException *e = [NSException exceptionWithName:NSInternalInconsistencyException reason:@"there are 0 displays under the mouse pointer" userInfo:NULL];
         @throw e;
     }
     free(newDisplaysUnderMousePointer);

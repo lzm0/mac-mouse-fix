@@ -62,7 +62,7 @@ static NSMutableDictionary *_configWithAppOverridesApplied;
 
 + (void)reactToConfigFileChange {
     fillConfigFromFile();
-    _configFileChanged = YES; // Doing this to force update of internal state, even the active app hastn't chaged
+    _configFileChanged = YES; // Doing this to force update of internal state, even the active app hasn't changed
     [ConfigFileInterface_HelperApp updateInternalParameters_Force:YES];
     _configFileChanged = NO;
 }
@@ -89,7 +89,7 @@ static void fillConfigFromFile() {
 
 /// Modify the helpers internal parameters according to _config and the currently active app.
 /// Used to apply appOverrides (`force == NO`), and after loading new config from file. (`force == YES`)
-/// \param force If NO, then it will only update the internal state, if the app currenly under the cursor is different to the one when this function was last called.
+/// \param force If NO, then it will only update the internal state, if the app currently under the cursor is different to the one when this function was last called.
 /// \returns YES, if internal parameters did update. NO otherwise.
 /// ... wtf was I thinking when writing this, why didn't I write 2 functions?
 + (BOOL)updateInternalParameters_Force:(BOOL)force {
@@ -109,7 +109,7 @@ static void fillConfigFromFile() {
         NSRunningApplication *appUnderMousePointer = [NSRunningApplication runningApplicationWithProcessIdentifier:elementUnderMousePointerPID];
         
         if (elementUnderMousePointer != nil) {
-            CFRelease(elementUnderMousePointer); // Using `@try { ... }` instead of `if (x != nil) { ... }` here results in a crash if elementUnderMousePointer is nil for some reason (Might be because it was running in debug configureation or something, or probably I just don't know how `@try` really works)
+            CFRelease(elementUnderMousePointer); // Using `@try { ... }` instead of `if (x != nil) { ... }` here results in a crash if elementUnderMousePointer is nil for some reason (Might be because it was running in debug configuration or something, or probably I just don't know how `@try` really works)
         }
         bundleIDOfCurrentApp = appUnderMousePointer.bundleIdentifier;
     }

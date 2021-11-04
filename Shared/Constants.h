@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
     // ^ The old value @"mouse.fix.helper" was also used with the old prefpane version which could lead to conflicts. See Mail beginning with 'I attached the system log. Happening with this version too'. < We moved back to the old `mouse.fix.helper` label
 
 // #define kMFLaunchdHelperIdentifier  @"com.nuebling.mac-mouse-fix.helper"
-//      ^ We meant to move the launchd label over to a new one to avoid conlicts when upgrading from the old prefpane, but I think it can lead to more complications. Also we'd fragment things, because the first few versions of the app version already shipped with the old "mouse.fix.helper" label
+//      ^ We meant to move the launchd label over to a new one to avoid conflicts when upgrading from the old prefpane, but I think it can lead to more complications. Also we'd fragment things, because the first few versions of the app version already shipped with the old "mouse.fix.helper" label
 
 #define kMFLaunchctlPath            @"/bin/launchctl"
 #define kMFXattrPath                @"/usr/bin/xattr"
@@ -126,7 +126,7 @@ typedef enum {
     kMFSHToggleDoNotDisturb = 175,
 } MFSymbolicHotkey;
 
-// Mosue Buttons
+// Mouse Buttons
 
 /// Note that CGMouseButton (and all CG APIs) assign 0 to left mouse button while MFMouseButtonNumber (and the rest of Mac Mouse Fix which doesn't use it yet) assigns 1 to lmb
 typedef enum {

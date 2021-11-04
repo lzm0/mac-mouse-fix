@@ -53,7 +53,7 @@ typedef enum {
 } CGSWindowOrderingMode;
 
 typedef enum {
-	kCGSBackingNonRetianed,
+	kCGSBackingNonRetained,
 	kCGSBackingRetained,
 	kCGSBackingBuffered,
 } CGSBackingType;
@@ -367,7 +367,7 @@ CG_EXTERN CGError CGSSetWindowEventShape(CGSConnectionID cid, CGSBackingType bac
 CG_EXTERN CGError CGSGetWindowEventMask(CGSConnectionID cid, CGWindowID wid, CGEventMask *mask);
 CG_EXTERN CGError CGSSetWindowEventMask(CGSConnectionID cid, CGWindowID wid, CGEventMask mask);
 
-/// Sets whether a window can recieve mouse events.  If no, events will pass to the next window that can receive the event.
+/// Sets whether a window can receive mouse events.  If no, events will pass to the next window that can receive the event.
 CG_EXTERN CGError CGSSetMouseEventEnableFlags(CGSConnectionID cid, CGWindowID wid, bool shouldEnable);
 
 
@@ -471,7 +471,7 @@ CG_EXTERN CGError CGSSetWindowListAlpha(CGSConnectionID cid, const CGWindowID *w
 /// Sets the shape over which the window can capture events in its frame rectangle.
 CG_EXTERN CGError CGSAddActivationRegion(CGSConnectionID cid, CGWindowID wid, CGSRegionRef region);
 
-/// Sets the shape over which the window can recieve mouse drag events.
+/// Sets the shape over which the window can receive mouse drag events.
 CG_EXTERN CGError CGSAddDragRegion(CGSConnectionID cid, CGWindowID wid, CGSRegionRef region);
 
 /// Removes any shapes over which the window can be dragged.
@@ -502,13 +502,13 @@ CG_EXTERN CGError CGSWindowAnimationSetParent(CGSAnimationRef animation, CGWindo
 CG_EXTERN CGError CGSReleaseWindowAnimation(CGSAnimationRef animation);
 
 
-#pragma mark - Window Accelleration
+#pragma mark - Window acceleration
 
 
-/// Gets the state of accelleration for the window.
+/// Gets the state of acceleration for the window.
 CG_EXTERN CGError CGSWindowIsAccelerated(CGSConnectionID cid, CGWindowID wid, bool *outIsAccelerated);
 
-/// Gets and sets if this window can be accellerated. I don't know if playing with this is safe.
+/// Gets and sets if this window can be accelerated. I don't know if playing with this is safe.
 CG_EXTERN CGError CGSWindowCanAccelerate(CGSConnectionID cid, CGWindowID wid, bool *outCanAccelerate);
 CG_EXTERN CGError CGSWindowSetCanAccelerate(CGSConnectionID cid, CGWindowID wid, bool canAccelerate);
 
@@ -517,7 +517,7 @@ CG_EXTERN CGError CGSWindowSetCanAccelerate(CGSConnectionID cid, CGWindowID wid,
 
 
 /// Registers or unregisters a window as a global status item (see `NSStatusItem`, `NSMenuExtra`).
-/// Once a window is registered, the Window Server takes care of placing it in the apropriate location.
+/// Once a window is registered, the Window Server takes care of placing it in the appropriate location.
 CG_EXTERN CGError CGSSystemStatusBarRegisterWindow(CGSConnectionID cid, CGWindowID wid, int priority);
 CG_EXTERN CGError CGSUnregisterWindowWithSystemStatusBar(CGSConnectionID cid, CGWindowID wid);
 

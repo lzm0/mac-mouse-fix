@@ -66,7 +66,7 @@
         
         // Get path of executable of helper app
         // Check if the "User/Library/LaunchAgents/mouse.fix.helper.plist" (< This specific path is deprecated) UserAgent Config file  (aka launchdPlist)
-        //      exists, if the Launch Agents Folder exists, and if the exectuable path within the plist file is correct
+        //      exists, if the Launch Agents Folder exists, and if the executable path within the plist file is correct
         // If not:
         // Create correct file based on "default_launchd.plist" and helperExecutablePath
         // Write correct file to "User/Library/LaunchAgents"
@@ -159,7 +159,7 @@
     
     // Analyze output
     
-    // Check if label exists. This should always be found if the helper is registered with launchd. Or equavalently, if the output isn't "Could not find service "mouse.fix.helper" in domain for port"
+    // Check if label exists. This should always be found if the helper is registered with launchd. Or equivalently, if the output isn't "Could not find service "mouse.fix.helper" in domain for port"
     NSString *labelSearchString = fstring(@"\"Label\" = \"%@\";", kMFLaunchdHelperIdentifier);
     BOOL labelFound = [launchctlOutput rangeOfString: labelSearchString].location != NSNotFound;
     
@@ -194,7 +194,7 @@
     }
     
     [self removeLegacyLaunchdPlist];
-    // ^ Could also do this in the if block but users have been having some weirdd issues after upgrading to the app version and I don't know why. I feel like this might make things slightly more robust.
+    // ^ Could also do this in the if block but users have been having some weird issues after upgrading to the app version and I don't know why. I feel like this might make things slightly more robust.
 }
 
 /// Check if helper is registered with launchd from some other location

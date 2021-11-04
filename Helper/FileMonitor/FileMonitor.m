@@ -40,7 +40,7 @@ static void setStreamToCurrentInstallLoc() {
     FSEventStreamScheduleWithRunLoop(_stream, CFRunLoopGetMain(), kCFRunLoopDefaultMode);
     FSEventStreamStart(_stream);
     
-    NSLog(@"Set file monitoring to: %@ App location accoring to NSWorkspace: %@", mainAppURL.path, [NSWorkspace.sharedWorkspace URLForApplicationWithBundleIdentifier:kMFBundleIDApp].path);
+    NSLog(@"Set file monitoring to: %@ App location according to NSWorkspace: %@", mainAppURL.path, [NSWorkspace.sharedWorkspace URLForApplicationWithBundleIdentifier:kMFBundleIDApp].path);
 }
 
 void Handle_FSCallback(ConstFSEventStreamRef streamRef, void *clientCallBackInfo, size_t numEvents, void *eventPaths, const FSEventStreamEventFlags *eventFlags, const FSEventStreamEventId *eventIds) {
@@ -88,7 +88,7 @@ void handleRelocation() {
     // We want to close the helper
     //  If we let the helper running after relocation:
     //      - If the helper closes (crashes) it won't be restarted automatically by launchd
-    //      - Just like the functions for getting current app bundles failed (we fixed it with hax bascially), there might be other stuff that behaves badly after relocation
+    //      - Just like the functions for getting current app bundles failed (we fixed it with hax basically), there might be other stuff that behaves badly after relocation
     // Unfortunately, I can't find a way to make launchd restart the helper from within the helper
     // We have to use a separate executable to restart the helper
     
@@ -103,7 +103,7 @@ void uninstallCompletely() {
     disableHelper();
 }
 void removeResidue() {
-    NSLog(@"Removing Mac Mouse Fix resdiue");
+    NSLog(@"Removing Mac Mouse Fix residue");
     // Delete Application Support Folder
     [NSFileManager.defaultManager trashItemAtURL:Objects.MFApplicationSupportFolderURL resultingItemURL:nil error:nil];
     // Delete launchd plist
